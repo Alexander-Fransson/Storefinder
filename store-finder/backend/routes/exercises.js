@@ -3,8 +3,8 @@ let Exercise = require('../modles/exersise.modle');
 
 router.route('/').get((req, res) => {
     Exercise.find()
-    .then(exercises => res.json(exercises))
-    .catch(err => res.status(400).json('Error: ' + err));
+      .then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/add').post((req, res) => {
@@ -21,6 +21,6 @@ router.route('/add').post((req, res) => {
     });
 
     newExercise.save()
-    .then(() => res.json('Exercise added'))
-    .catch(err => res.status(400).json('Error: '+ err));
+      .then(() => res.json('Exercise added'))
+      .catch(err => res.status(400).json('Error: '+ err));
 });

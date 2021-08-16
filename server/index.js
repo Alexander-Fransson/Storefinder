@@ -18,7 +18,7 @@ app.get('/', (req,res) => {
    res.send('Hello to slapfinderino API')
 })
 
-const CONNECTION_URL = process.env.CONNECTION_URL;
+const CONNECTION_URL = process.env.CONNECTION_URL || 'mongodb+srv://user:jEa44Mcugq@.9zq@cluster0.qla1a.mongodb.net/STORE_FINDER?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
